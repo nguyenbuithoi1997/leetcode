@@ -1,18 +1,21 @@
-        }
-            }
-        return ranks;
-    }
-}
+class Solution {
+    public String[] findRelativeRanks(int[] score) {
+        int n = score.length;
+        int[] sortedScore = score.clone();
+        Arrays.sort(sortedScore);
+        String[] ranks = new String[n];
+
         for (int i = 0; i < score.length; i++) {
             int rank = Arrays.binarySearch(sortedScore, score[i]);
-            rank = n - rank;
-            if (rank == 1) {
+            if (rank == n - 1) {
                 ranks[i] = "Gold Medal";
-            } else if (rank == 2) {
+            } else if (rank == n - 2) {
                 ranks[i] = "Silver Medal";
-            } else if (rank == 3) {
+            } else if (rank == n - 3) {
                 ranks[i] = "Bronze Medal";
             } else {
                 ranks[i] = String.valueOf(rank);
-
+            }
+        }
+        return ranks;
 [
