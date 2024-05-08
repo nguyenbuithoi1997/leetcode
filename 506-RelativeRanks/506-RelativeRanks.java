@@ -1,22 +1,18 @@
-                case 1:
-                    ranks[i] = "Gold Medal";
-                    break;
-                case 2:
-                    ranks[i] = "Silver Medal";
-                    break;
-            switch (rank) {
-            rank = n - rank;
-        String[] ranks = new String[n];
-
+        }
+            }
+        return ranks;
+    }
+}
         for (int i = 0; i < score.length; i++) {
             int rank = Arrays.binarySearch(sortedScore, score[i]);
-                case 3:
-                    ranks[i] = "Bronze Medal";
-                    break;
-                default:
-                    ranks[i] = String.valueOf(rank);
-                   
-                     break;
-            }
-        }
+            rank = n - rank;
+            if (rank == 1) {
+                ranks[i] = "Gold Medal";
+            } else if (rank == 2) {
+                ranks[i] = "Silver Medal";
+            } else if (rank == 3) {
+                ranks[i] = "Bronze Medal";
+            } else {
+                ranks[i] = String.valueOf(rank);
+
 [
