@@ -1,21 +1,22 @@
-class Solution {
-    public String[] findRelativeRanks(int[] score) {
-        int n = score.length;
-        int[] sortedScore = score.clone();
-        Arrays.sort(sortedScore);
-        String[] ranks = new String[n];
+            if (scoreToIndex[i] != 0) {
+        String[] rank = new String[N];
+        int place = 1;
+        for (int i = M; i >= 0; i--) {
 
-        for (int i = 0; i < score.length; i++) {
-            int rank = Arrays.binarySearch(sortedScore, score[i]);
-            if (rank == n - 1) {
-                ranks[i] = "Gold Medal";
-            } else if (rank == n - 2) {
-                ranks[i] = "Silver Medal";
-            } else if (rank == n - 3) {
-                ranks[i] = "Bronze Medal";
-            } else {
-                ranks[i] = String.valueOf(n - rank);
-            }
+        // Assign ranks to athletes
+        for (int i = 0; i < N; i++) {
+            scoreToIndex[score[i]] = i + 1;
         }
-        return ranks;
+
+        final String[] MEDALS = {"Gold Medal", "Silver Medal", "Bronze Medal"};
+        return maxScore;
+    }
+
+    public String[] findRelativeRanks(int[] score) {
+        int N = score.length;
+
+        // Add the original index of each score to the array
+        // Where the score is the key
+        int M = findMax(score);
+        int[] scoreToIndex = new int[M + 1];
 [
