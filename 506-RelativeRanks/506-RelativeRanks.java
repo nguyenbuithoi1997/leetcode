@@ -14,7 +14,7 @@ class Solution {
             } else if (rank == n - 3) {
                 ranks[i] = "Bronze Medal";
             } else {
-                ranks[i] = String.valueOf(rank);
+                ranks[i] = String.valueOf(n - rank);
             }
         }
         return ranks;
