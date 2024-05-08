@@ -1,21 +1,22 @@
-            int index = list.indexOf(search);
-            switch (index) {
-                case 0:
-                    result[i] = "Gold Medal";
-                    break;
+            switch (rank) {
                 case 1:
-                    result[i] = "Silver Medal";
+                    ranks[i] = "Gold Medal";
                     break;
                 case 2:
-                    result[i] = "Bronze Medal";
-            int search = score[i];
-        for (int i = 0; i < score.length; i++) {
+                    ranks[i] = "Silver Medal";
                     break;
-boxed().sorted(Collections.reverseOrder()).toList();
-        List<Integer> list = Arrays.stream(score).
+                case 3:
+                    ranks[i] = "Bronze Medal";
+                    break;
+            rank = n - rank;
+        for (int i = 0; i < score.length; i++) {
+            int rank = Arrays.binarySearch(sortedScore, score[i]);
 
+        String[] ranks = new String[n];
+        Arrays.sort(sortedScore);
                 default:
-                    result[i] = String.valueOf(index
-+1);
+                    ranks[i] = String.valueOf(rank);
             }
+        }
+        return ranks;
 [
